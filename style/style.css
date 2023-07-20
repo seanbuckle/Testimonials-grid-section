@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+* {
+  padding-block: 0;
+  padding-inline: 0;
+  margin-inline: 0;
+  margin-block: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* colors */
+  /* primary */
+  --moderate-violet: hsl(263, 55%, 52%);
+  --moderate-violet-opacity: hsla(263, 55%, 52%, 0.5);
+  --moderate-violet-border: hsl(264, 82%, 70%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --white-opacity: hsl(0, 0%, 100%, 0.5);
+  /* neutral */
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  /* font-size */
+  --body-font-size: 13px;
+  /* font-family */
+  --body-font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  min-block-size: 100dvh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  font-size: var(--body-font-size);
+  font-family: var(--body-font-family);
+  background-color: var(--light-grayish-blue);
+  accent-color: var(--moderate-violet);
+}
+
+.site-main {
+  inline-size: min(100%, 1110px);
+  padding-inline: 24px;
+  padding-block: 24px;
+  margin-inline: auto;
+  display: grid;
+  gap: 24px;
+}
+
+@media screen and (min-width: 800px) {
+  .site-main {
+    grid-template-columns: repeat(4, auto);
+  }
+  .span-2 {
+    grid-row: auto/span 2;
+  }
+  .card:nth-child(1) {
+    grid-area: 1/1/2/3;
+  }
+  .card:nth-child(2) {
+    grid-area: 1/3/2/4;
+  }
+  .card:nth-child(3) {
+    grid-area: 2/1/3/2;
+  }
+  .card:nth-child(4) {
+    grid-area: 2/2/3/4;
+  }
+  .card:nth-child(5) {
+    grid-area: 1/4/3/5;
+  }
+}
+.card {
+  padding-block: 32px;
+  padding-inline: 32px;
+  border-start-start-radius: 8px;
+  border-start-end-radius: 8px;
+  border-end-start-radius: 8px;
+  border-end-end-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  background: #FFF;
+  box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
+}
+.card--purple {
+  background-image: url("/images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 24px;
+  background-size: 104px auto;
+  background-color: var(--moderate-violet);
+}
+.card--dark {
+  background-color: var(--very-dark-blackish-blue);
+  color: var(--white);
+}
+.card--dim {
+  background-color: var(--very-dark-grayish-blue);
+  color: var(--white);
+}
+.card__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 16px;
+  padding-block-end: 1.125rem;
+}
+.card__header--purple {
+  color: var(--white);
+}
+.card__header--dim {
+  color: var(--white);
+}
+.card__header--dark {
+  color: var(--white);
+}
+.card__text {
+  display: flex;
+  flex-direction: column;
+}
+.card__name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--very-dark-grayish-blue);
+}
+.card__name--purple {
+  color: var(--white);
+}
+.card__name--dim {
+  color: var(--white);
+}
+.card__name--dark {
+  color: var(--white);
+}
+.card__verified {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--very-dark-grayish-blue);
+  opacity: 0.5;
+}
+.card__verified--purple {
+  color: var(--white);
+}
+.card__verified--dim {
+  color: var(--white);
+}
+.card__verified--dark {
+  color: var(--white);
+}
+.card__image {
+  inline-size: 28px;
+  block-size: 28px;
+  border-radius: 50%;
+  border-inline: 2px solid var(--light-gray);
+  border-block: 2px solid var(--light-gray);
+}
+.card__image--purple {
+  border-inline: 2px solid var(--moderate-violet-border);
+  border-block: 2px solid var(--moderate-violet-border);
+}
+.card__subtitle {
+  padding-block-end: 1rem;
+  color: var(--very-dark-blackish-blue);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  text-wrap: balance;
+}
+.card__subtitle--purple {
+  color: var(--white);
+}
+.card__subtitle--dim {
+  color: var(--white);
+}
+.card__subtitle--dark {
+  color: var(--light-grayish-blue);
+}
+.card__quote {
+  color: var(--very-dark-grayish-blue);
+  line-height: 18px;
+  opacity: 0.6999999881;
+}
+.card__quote--purple {
+  color: var(--light-gray);
+}
+.card__quote--dim {
+  color: var(--white);
+}
+.card__quote--dark {
+  color: var(--white);
+}
+
+.attribution {
+  block-size: 4rem;
+  display: grid;
+  place-items: center;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--moderate-violet);
+  text-decoration: none;
+}
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=style.css.map */
